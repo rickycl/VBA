@@ -59,7 +59,7 @@ For Each olMail In Fldr.Items
         If Left(ti, 10) = Left(Now, 10) Then
             olMail.Display
 
-            'Workbooks.OpenText Filename:="C:\Users\SXBS5132\Desktop\Monitoring_svk\Supervision Downstream SK.xlsx"
+            'Workbooks.OpenText Filename:="C:\Users\xxx\Desktop\Monitoring_svk\Supervision Downstream SK.xlsx"
             'ActiveWorkbook.Sheets("ARC_ETL").Activate
             'Range("A1:I1").Select
             'Range(Selection, Selection.End(xlDown)).Select
@@ -75,10 +75,10 @@ For Each olMail In Fldr.Items
             For Each olAtt In olMail.Attachments
                 If Right(olAtt.Filename, 3) = "zip" Then
                     MsgBox "Le mail du jour est: " & olAtt.Filename
-                    olAtt.SaveAsFile "C:\Users\KSVC3972\Desktop\Monitoring_svk" & "\" & olAtt.Filename '
+                    olAtt.SaveAsFile "C:\Users\xxx\Desktop\Monitoring_svk" & "\" & olAtt.Filename '
                     
-                    zipFileName = "C:\Users\KSVC3972\Desktop\Monitoring_svk" & "\" & olAtt.Filename '
-                    unzipFolderName = "C:\Users\KSVC3972\Desktop\Monitoring_svk" '
+                    zipFileName = "C:\Users\xxx\Desktop\Monitoring_svk" & "\" & olAtt.Filename '
+                    unzipFolderName = "C:\Users\xxx\Desktop\Monitoring_svk" '
                     Set objZipItems = wShApp.Namespace(zipFileName).Items
                     
                     For Each objZipItem In wShApp.Namespace(zipFileName).Items
@@ -86,7 +86,7 @@ For Each olMail In Fldr.Items
                             wShApp.Namespace(unzipFolderName).CopyHere objZipItem
                         
                             Workbooks.OpenText Filename:= _
-                            "C:\Users\KSVC3972\Desktop\Monitoring_svk\" & objZipItem '
+                            "C:\Users\xxx\Desktop\Monitoring_svk\" & objZipItem '
                             
                             Columns("A:A").Select
                             'Application.CutCopyMode = False
