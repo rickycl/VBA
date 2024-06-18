@@ -81,7 +81,7 @@ For Each olMail In Fldr.Items
             'MsgBox Mid(Now, 9, 2)
             'MsgBox olMail.ReceivedTime
             
-            Workbooks.OpenText Filename:="C:\Users\SXBS5132\Desktop\Monitoring\supervision Downstream RO.xlsx" ''new
+            Workbooks.OpenText Filename:="C:\Users\xxx\Desktop\Monitoring\supervision Downstream RO.xlsx" ''new
                     'Workbooks("supervision Downstream RO.xlsx")
                     'Worksheets("ARC_ETL").Range("A:I").Delete ''new
             '
@@ -97,7 +97,7 @@ For Each olMail In Fldr.Items
             Selection.ClearContents
             Range("A1").Select
             '
-            Workbooks.OpenText Filename:="C:\Users\SXBS5132\Desktop\Monitoring\supervision Downstream FR.xlsx"
+            Workbooks.OpenText Filename:="C:\Users\xxx\Desktop\Monitoring\supervision Downstream FR.xlsx"
             ActiveWorkbook.Sheets("ARC_ETL").Activate
             Range("A1:I1").Select
             Range(Selection, Selection.End(xlDown)).Select
@@ -110,7 +110,7 @@ For Each olMail In Fldr.Items
             Selection.ClearContents
             Range("A1").Select
             
-            Workbooks.OpenText Filename:="C:\Users\SXBS5132\Desktop\Monitoring\supervision Downstream SK.xlsx"
+            Workbooks.OpenText Filename:="C:\Users\xxx\Desktop\Monitoring\supervision Downstream SK.xlsx"
             ActiveWorkbook.Sheets("ARC_ETL").Activate
             Range("A1:I1").Select
             Range(Selection, Selection.End(xlDown)).Select
@@ -127,10 +127,10 @@ For Each olMail In Fldr.Items
                 If Right(olAtt.Filename, 3) = "zip" Then
                     MsgBox "Le mail du jour est" & " : " & olAtt.Filename
 
-                    olAtt.SaveAsFile "C:\Users\SXBS5132\Desktop\Monitoring" & "\" & olAtt.Filename '
+                    olAtt.SaveAsFile "C:\Users\xxx\Desktop\Monitoring" & "\" & olAtt.Filename '
                     
-                    zipFileName = "C:\Users\SXBS5132\Desktop\Monitoring" & "\" & olAtt.Filename '
-                    unzipFolderName = "C:\Users\SXBS5132\Desktop\Monitoring" '
+                    zipFileName = "C:\Users\xxx\Desktop\Monitoring" & "\" & olAtt.Filename '
+                    unzipFolderName = "C:\Users\xxx\Desktop\Monitoring" '
                     Set objZipItems = wShApp.Namespace(zipFileName).Items
                     
                     '''
@@ -142,7 +142,7 @@ For Each olMail In Fldr.Items
                             wShApp.Namespace(unzipFolderName).CopyHere objZipItem
                         
                             Workbooks.OpenText Filename:= _
-                            "C:\Users\SXBS5132\Desktop\Monitoring\" & objZipItem '
+                            "C:\Users\xxx\Desktop\Monitoring\" & objZipItem '
                             
                             Columns("A:A").Select
                             'Application.CutCopyMode = False
@@ -204,20 +204,20 @@ For Each olMail In Fldr.Items
                         If InStr(objZipItem.Name, "FR_DW_ARCA_CHK") <> 0 Then
                             'MsgBox objFiles.Count
                             'MsgBox objZipItem.DateLastModified
-                            wShApp.Namespace("C:\Users\SXBS5132\Desktop\Monitoring\FR_DW_ARCA").CopyHere objZipItem
+                            wShApp.Namespace("C:\Users\xxx\Desktop\Monitoring\FR_DW_ARCA").CopyHere objZipItem
                         
                             'Workbooks.OpenText Filename:= _
-                            '"C:\Users\SXBS5132\Desktop\Monitoring\FR_DW_ARCA\" & objZipItem '
+                            '"C:\Users\xxx\Desktop\Monitoring\FR_DW_ARCA\" & objZipItem '
                         ElseIf InStr(objZipItem.Name, "RO_DW_ARCA_CHK") <> 0 Then
-                            wShApp.Namespace("C:\Users\SXBS5132\Desktop\Monitoring\RO_DW_ARCA").CopyHere objZipItem
+                            wShApp.Namespace("C:\Users\xxx\Desktop\Monitoring\RO_DW_ARCA").CopyHere objZipItem
                         ElseIf InStr(objZipItem.Name, "SK_DW_ARCA_CHK") <> 0 Then
-                            wShApp.Namespace("C:\Users\SXBS5132\Desktop\Monitoring\SK_DW_ARCA").CopyHere objZipItem
+                            wShApp.Namespace("C:\Users\xxx\Desktop\Monitoring\SK_DW_ARCA").CopyHere objZipItem
                         End If
                     Next
                     
-                        MyPath = "C:\Users\SXBS5132\Desktop\Monitoring\FR_DW_ARCA\"
-                        MyPath1 = "C:\Users\SXBS5132\Desktop\Monitoring\RO_DW_ARCA\"
-                        MyPath2 = "C:\Users\SXBS5132\Desktop\Monitoring\SK_DW_ARCA\"
+                        MyPath = "C:\Users\xxx\Desktop\Monitoring\FR_DW_ARCA\"
+                        MyPath1 = "C:\Users\xxx\Desktop\Monitoring\RO_DW_ARCA\"
+                        MyPath2 = "C:\Users\xxx\Desktop\Monitoring\SK_DW_ARCA\"
                         
                         'If Right(MyPath, 1) <> "\" Then MyPath = MyPath & "\"
                             MyFile = Dir(MyPath & "*.csv", vbNormal)
